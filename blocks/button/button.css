@@ -1,0 +1,38 @@
+.button {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button_view_primary {
+  background: var(--accent);
+  color: white;
+}
+
+.button_view_outline {
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+}
+
+.button_size_small {
+  margin: 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.button_grow {
+  flex: 1;
+}
+
+.button_active {
+  background: #ff4d8a;
+}

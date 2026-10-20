@@ -1,0 +1,8 @@
+.screen {
+  display: none;
+  padding-bottom: 20px;
+}
+
+.screen_active {
+  display: block;
+}

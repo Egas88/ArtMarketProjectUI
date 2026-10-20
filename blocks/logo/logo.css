@@ -1,0 +1,21 @@
+.logo {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 10px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: #3a2030;
+  font-size: 12px;
+  text-align: center;
+}
+
+.logo_size_small {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  font-size: 10px;
+}

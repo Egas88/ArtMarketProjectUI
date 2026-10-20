@@ -1,0 +1,86 @@
+.form__intro {
+  padding: 10px 16px 0;
+  text-align: center;
+}
+
+.form__intro-title {
+  margin-bottom: 16px;
+  font-size: 1.17em;
+  font-weight: 700;
+}
+
+.form__group {
+  margin: 0 16px 16px;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+}
+
+.form__error {
+  display: none;
+  margin-bottom: 12px;
+  color: #ff6b6b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.form__error_visible {
+  display: block;
+}
+
+.form__choices {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form__photos {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+}
+
+.form__photo {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #4a2030;
+}
+
+.form__photo_add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.form__actions {
+  padding: 0 16px;
+}
+
+.form__actions_spaced {
+  padding-bottom: 20px;
+}

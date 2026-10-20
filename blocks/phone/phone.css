@@ -1,0 +1,25 @@
+.phone {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  overflow: hidden;
+  border: 8px solid #1a0a14;
+  border-radius: 40px;
+  background: var(--bg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.phone__status-bar {
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.phone__screen {
+  height: calc(100% - 44px - 70px);
+  overflow-y: auto;
+}

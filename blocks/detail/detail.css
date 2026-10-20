@@ -1,0 +1,21 @@
+.detail__header {
+  padding: 16px;
+}
+
+.detail__title {
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.detail__meta {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.detail__actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Арт-Маркет</title>
+<link rel="stylesheet" href="common/common.css">
+<link rel="stylesheet" href="blocks/page/page.css">
+<link rel="stylesheet" href="blocks/phone/phone.css">
+<link rel="stylesheet" href="blocks/screen/screen.css">
+<link rel="stylesheet" href="blocks/bottom-nav/bottom-nav.css">
+<link rel="stylesheet" href="blocks/logo/logo.css">
+<link rel="stylesheet" href="blocks/splash/splash.css">
+<link rel="stylesheet" href="blocks/button/button.css">
+<link rel="stylesheet" href="blocks/header/header.css">
+<link rel="stylesheet" href="blocks/search/search.css">
+<link rel="stylesheet" href="blocks/section-title/section-title.css">
+<link rel="stylesheet" href="blocks/event-card/event-card.css">
+<link rel="stylesheet" href="blocks/detail/detail.css">
+<link rel="stylesheet" href="blocks/section/section.css">
+<link rel="stylesheet" href="blocks/organizer/organizer.css">
+<link rel="stylesheet" href="blocks/profile/profile.css">
+<link rel="stylesheet" href="blocks/menu/menu.css">
+<link rel="stylesheet" href="blocks/form/form.css">
+<link rel="stylesheet" href="blocks/empty-state/empty-state.css">
+<link rel="stylesheet" href="blocks/auth-required/auth-required.css">
+<link rel="stylesheet" href="blocks/event-brief/event-brief.css">
+</head>
+<body class="page">
+<div class="phone">
+  <div class="phone__status-bar">
+    <span class="phone__time">9:41</span>
+    <span class="phone__indicators">📶 🔋</span>
+  </div>
+
+  <div id="splash" class="phone__screen screen screen_active">
+    <div class="splash">
+      <div class="logo">ARTISANAL<br>BLOOMS &amp; CLAY<br>CRAFT FAIR</div>
+      <h1 class="splash__title">Арт-Маркет</h1>
+      <h2 class="splash__subtitle">Твой помощник</h2>
+      <p class="splash__description">Путеводитель по локальным творческим маркетам, ярмаркам мастеров и хендмейд выставкам России</p>
+      <button class="button button_view_primary" type="button" data-goto="register">Зарегистрироваться</button>
+      <button class="button button_view_outline" type="button" data-goto="login">Войти</button>
+    </div>
+  </div>
+
+  <div id="login" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="splash" aria-label="Назад">←</button>
+      <h2 class="header__title">Вход</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div class="profile profile_view_login">
+      <div class="logo logo_size_small">Арт<br>Маркет</div>
+      <h3 class="profile__heading">Войдите в аккаунт</h3>
+    </div>
+    <form class="form" id="loginForm">
+      <div class="form__group">
+        <label class="form__label" for="loginName">ИМЯ ПОЛЬЗОВАТЕЛЯ</label>
+        <input id="loginName" class="form__input" placeholder="test" value="test">
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="loginPass">ПАРОЛЬ</label>
+        <input id="loginPass" class="form__input" type="password" placeholder="••••" value="1111">
+      </div>
+      <div id="loginError" class="form__error"></div>
+      <div class="form__actions">
+        <button class="button button_view_primary" type="submit">Войти</button>
+        <button class="button button_view_outline" type="button" data-goto="register">Нет аккаунта? Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="register" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="splash" aria-label="Назад">←</button>
+      <h2 class="header__title">Регистрация</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <form class="form" id="registerForm">
+      <div class="form__intro">
+        <h3 class="form__intro-title">Создайте аккаунт</h3>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="regName">ИМЯ ПОЛЬЗОВАТЕЛЯ</label>
+        <input id="regName" class="form__input" placeholder="Придумайте логин">
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="regPass">ПАРОЛЬ</label>
+        <input id="regPass" class="form__input" type="password" placeholder="Минимум 4 символа">
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="regPass2">ПОВТОРИТЕ ПАРОЛЬ</label>
+        <input id="regPass2" class="form__input" type="password" placeholder="Ещё раз">
+      </div>
+      <div id="regError" class="form__error"></div>
+      <div class="form__actions form__actions_spaced">
+        <button class="button button_view_primary" type="submit">Зарегистрироваться</button>
+        <button class="button button_view_outline" type="button" data-goto="login">Уже есть аккаунт? Войти</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="auth-required" class="phone__screen screen">
+    <div class="auth-required">
+      <div class="auth-required__icon">🔒</div>
+      <div class="auth-required__title">Требуется авторизация</div>
+      <div class="auth-required__text">Войдите в аккаунт, чтобы открыть кабинет, избранное и другие личные разделы.</div>
+      <button class="button button_view_primary" type="button" data-goto="login">Войти</button>
+      <button class="button button_view_outline" type="button" data-goto="register">Зарегистрироваться</button>
+      <button class="button button_view_outline" type="button" data-goto="main">На главную</button>
+    </div>
+  </div>
+
+  <div id="main" class="phone__screen screen">
+    <header class="header">
+      <span class="header__side" aria-hidden="true">☰</span>
+      <h2 class="header__title">Арт-Маркет</h2>
+      <span class="header__side" aria-hidden="true">🕐</span>
+    </header>
+    <div class="search">
+      <span class="search__icon" aria-hidden="true">🔍</span>
+      <span class="search__text">Поиск маркетов или товаров...</span>
+    </div>
+    <div class="section-title">
+      <span class="section-title__text">Ближайшие мероприятия</span>
+      <span class="section-title__action" aria-hidden="true">⚙️</span>
+    </div>
+    <div class="event-card" data-goto="detail">
+      <div class="event-card__image">Цветочный рынок</div>
+      <div class="event-card__body">
+        <h3 class="event-card__title">Маркет «Цветочный»</h3>
+        <div class="event-card__meta">📅 25–26 мая, 12:00–21:00 · Санкт-Петербург</div>
+        <div class="event-card__tags">
+          <span class="event-card__tag">Цветы</span>
+          <span class="event-card__tag">Керамика</span>
+          <span class="event-card__tag">Декор</span>
+        </div>
+      </div>
+    </div>
+    <div class="event-card" data-goto="detail">
+      <div class="event-card__image">Ярмарка одежды</div>
+      <div class="event-card__body">
+        <h3 class="event-card__title">Ярмарка «Весна»</h3>
+        <div class="event-card__meta">📅 1–2 июня, 11:00–20:00 · Санкт-Петербург</div>
+        <div class="event-card__tags">
+          <span class="event-card__tag">Хендмейд</span>
+          <span class="event-card__tag">Одежда</span>
+          <span class="event-card__tag">Свечи</span>
+        </div>
+      </div>
+    </div>
+    <div class="event-card" data-goto="detail">
+      <div class="event-card__image">Арт-двор</div>
+      <div class="event-card__body">
+        <h3 class="event-card__title">Маркет «Арт-Двор»</h3>
+        <div class="event-card__meta">📅 8 июня, 12:00–22:00 · Санкт-Петербург</div>
+        <div class="event-card__tags">
+          <span class="event-card__tag">Картины</span>
+          <span class="event-card__tag">Посуда</span>
+          <span class="event-card__tag">Винил</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="detail" class="phone__screen screen">
+    <div class="detail">
+      <div class="detail__header">
+        <div class="detail__title" id="detailTitle">Маркет «Арт-Двор»</div>
+        <div class="detail__meta" id="detailMeta">📅 8 июня, 12:00–22:00 · 📍 Санкт-Петербург</div>
+        <div class="detail__actions">
+          <button class="button button_view_primary button_size_small button_grow" type="button" data-action="participate">Участвовать</button>
+          <button id="favBtn" class="button button_view_outline button_size_small button_grow" type="button" data-action="toggle-favorite">♡ В избранное</button>
+        </div>
+      </div>
+      <section class="section">
+        <h4 class="section__title">О маркете</h4>
+        <p class="section__text">Уютный петербургский маркет во дворе старинного особняка. Место встречи локальных художников, гончаров и дизайнеров одежды. Вас ждут уникальная керамика ручной работы, оригинальные постеры, крафтовые свечи, а также виниловый корнер и зона апсайклинга.</p>
+      </section>
+      <section class="section">
+        <h4 class="section__title">Место проведения</h4>
+        <p class="section__text">Двор Особняка Слепцова<br>ул. Большая Конюшенная, 9</p>
+        <div class="section__map">🗺️ Карта</div>
+      </section>
+      <div class="organizer">
+        <div class="organizer__avatar"></div>
+        <div class="organizer__info">
+          <div class="organizer__role">Организатор</div>
+          <div class="organizer__name">Студия «Арт-Союз»</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="favorites" class="phone__screen screen">
+    <header class="header">
+      <span class="header__side" aria-hidden="true"></span>
+      <h2 class="header__title">Избранное</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div id="favoritesList"></div>
+    <div id="favoritesEmpty" class="empty-state">
+      <div class="empty-state__icon">♡</div>
+      <div class="empty-state__title">В избранном пока пусто</div>
+      <div class="empty-state__text">Добавляйте понравившиеся маркеты, чтобы быстро к ним возвращаться.</div>
+      <button class="button button_view_primary" type="button" data-goto="main">Перейти к афише</button>
+    </div>
+  </div>
+
+  <div id="cabinet" class="phone__screen screen">
+    <div class="profile">
+      <div class="profile__avatar"></div>
+      <div class="profile__name" id="cabinetName">Александра Смирнова</div>
+      <div class="profile__role">Художник / Мастер</div>
+    </div>
+    <div class="menu">
+      <button class="menu__item" type="button" data-goto-protected="my-events">📅 Мои мероприятия</button>
+      <button class="menu__item" type="button" data-goto-protected="resume">📄 Моё резюме</button>
+      <button class="menu__item" type="button" data-goto-protected="favorites">♡ Избранное</button>
+      <button class="menu__item" type="button" data-goto="settings">⚙️ Настройки</button>
+      <button class="menu__item menu__item_danger" type="button" data-action="logout">🚪 Выйти</button>
+    </div>
+  </div>
+
+  <div id="my-events" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="cabinet" aria-label="Назад">←</button>
+      <h2 class="header__title">Мои мероприятия</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div id="myEventsList"></div>
+    <div id="myEventsEmpty" class="empty-state">
+      <div class="empty-state__icon">📅</div>
+      <div class="empty-state__title">Вы ещё не подавали заявок</div>
+      <div class="empty-state__text">Выберите маркет на афише и нажмите «Участвовать».</div>
+      <button class="button button_view_primary" type="button" data-goto="main">К афише</button>
+    </div>
+  </div>
+
+  <div id="settings" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="cabinet" aria-label="Назад">←</button>
+      <h2 class="header__title">Настройки</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div class="menu">
+      <div class="menu__item">🔔 Уведомления</div>
+      <div class="menu__item">🌙 Тёмная тема (всегда)</div>
+      <div class="menu__item">📍 Город: Санкт-Петербург</div>
+      <div class="menu__item">ℹ️ О приложении</div>
+    </div>
+  </div>
+
+  <div id="resume" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="cabinet" aria-label="Назад">←</button>
+      <h2 class="header__title">Редактирование резюме</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div class="profile profile_view_compact">
+      <div class="profile__avatar"></div>
+      <div class="profile__hint">Изменить фото профиля</div>
+    </div>
+    <form class="form" id="resumeForm">
+      <div class="form__group">
+        <label class="form__label" for="resumeNickname">НИКНЕЙМ / БРЕНД</label>
+        <input id="resumeNickname" class="form__input" value="Терракотовый сад">
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="resumeName">НАСТОЯЩЕЕ ИМЯ</label>
+        <input id="resumeName" class="form__input" value="Мария Савельева">
+      </div>
+      <div class="form__group">
+        <label class="form__label">КОНТАКТЫ</label>
+        <div class="form__fields">
+          <input class="form__input" value="Telegram: @terracotta_garden">
+          <input class="form__input" value="Телефон: +7 (911) 234-56-78">
+          <input class="form__input" value="Email: maria@artmarket.ru">
+        </div>
+      </div>
+      <div class="form__group">
+        <label class="form__label">ФОТО ТОВАРОВ 3 из 6</label>
+        <div class="form__photos">
+          <div class="form__photo"></div>
+          <div class="form__photo"></div>
+          <div class="form__photo"></div>
+          <div class="form__photo form__photo_add">+</div>
+        </div>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="resumeAbout">ЗАМЕТКИ (О СЕБЕ)</label>
+        <textarea id="resumeAbout" class="form__input" rows="4">Занимаюсь ручной лепкой из глины уже более 5 лет. Каждое изделие уникально и наполнено природным теплом.</textarea>
+      </div>
+      <div class="form__actions form__actions_spaced">
+        <button class="button button_view_primary" type="button" data-action="save-resume">Сохранить резюме</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="apply" class="phone__screen screen">
+    <header class="header">
+      <button class="header__side header__side_interactive" type="button" data-goto="detail" aria-label="Назад">←</button>
+      <h2 class="header__title">Подача заявки</h2>
+      <span class="header__side" aria-hidden="true"></span>
+    </header>
+    <div class="event-brief">
+      <p class="event-brief__title">Маркет «Цветочный»</p>
+      <p class="event-brief__meta">15–16 мая 2026 · Санкт-Петербург</p>
+    </div>
+    <section class="section">
+      <h4 class="section__title">Выберите резюме</h4>
+      <div id="resumeSelect" class="menu menu_inset"></div>
+    </section>
+    <form class="form" id="applyForm">
+      <div class="form__group">
+        <label class="form__label">ФОТО ДЛЯ ЗАЯВКИ</label>
+        <div class="form__choices">
+          <button class="button button_view_outline button_size_small button_grow" type="button">Из резюме</button>
+          <button class="button button_view_primary button_size_small button_grow" type="button">Загрузить другие</button>
+        </div>
+        <div class="form__photos">
+          <div class="form__photo"></div>
+          <div class="form__photo"></div>
+        </div>
+      </div>
+      <div class="form__group">
+        <label class="form__label" for="applyMessage">СОПРОВОДИТЕЛЬНОЕ СООБЩЕНИЕ</label>
+        <textarea id="applyMessage" class="form__input" rows="3" placeholder="Расскажите немного о себе и почему хотите участвовать на этом маркете..."></textarea>
+      </div>
+      <div class="form__actions form__actions_spaced">
+        <button class="button button_view_primary" type="button" data-goto="main">Отправить заявку</button>
+      </div>
+    </form>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="bottom-nav__item bottom-nav__item_active" type="button" data-nav="main" data-goto="main">
+      <span class="bottom-nav__icon">🏠</span>
+      <span class="bottom-nav__text">Главная</span>
+    </button>
+    <button class="bottom-nav__item" type="button" data-nav="map" data-goto="main">
+      <span class="bottom-nav__icon">🗺️</span>
+      <span class="bottom-nav__text">Карта</span>
+    </button>
+    <button class="bottom-nav__item" type="button" data-nav="favorites" data-goto-protected="favorites">
+      <span class="bottom-nav__icon">♡</span>
+      <span class="bottom-nav__text">Избранное</span>
+    </button>
+    <button class="bottom-nav__item" type="button" data-nav="cabinet" data-goto-protected="cabinet">
+      <span class="bottom-nav__icon">👤</span>
+      <span class="bottom-nav__text">Кабинет</span>
+    </button>
+  </nav>
+</div>
+<script src="scripts/app.js"></script>
+</body>
+</html>
