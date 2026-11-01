@@ -1,0 +1,65 @@
+.event-card {
+  margin: 0 16px 16px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--card);
+  cursor: pointer;
+}
+
+.event-card__image {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4a2030;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.event-card__body {
+  padding: 12px;
+}
+
+.event-card__title {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.event-card__meta {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.event-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.event-card__tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #2a1520;
+  color: var(--accent2);
+  font-size: 11px;
+}
+
+.event-card__status {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.event-card__status_state_participating {
+  color: #4ade80;
+}
+
+.event-card__status_state_pending {
+  color: #fbbf24;
+}
+
+.event-card__status_state_rejected {
+  color: #f87171;
+}

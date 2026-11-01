@@ -1,0 +1,15 @@
+.event-brief {
+  margin: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.event-brief__title {
+  font-weight: 700;
+}
+
+.event-brief__meta {
+  color: var(--muted);
+  font-size: 13px;
+}

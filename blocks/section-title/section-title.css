@@ -1,0 +1,7 @@
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px 8px;
+  font-size: 16px;
+}

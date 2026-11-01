@@ -1,0 +1,25 @@
+.auth-required {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.auth-required__icon {
+  margin-bottom: 16px;
+  font-size: 48px;
+}
+
+.auth-required__title {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.auth-required__text {
+  margin-bottom: 24px;
+  color: var(--muted);
+  line-height: 1.5;
+}

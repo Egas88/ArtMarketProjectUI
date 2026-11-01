@@ -1,0 +1,21 @@
+.organizer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 16px;
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--card);
+}
+
+.organizer__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #5a3040;
+}
+
+.organizer__role {
+  color: var(--muted);
+  font-size: 13px;
+}
